@@ -54,6 +54,6 @@
     "constructs": "^10.3.0",
     "esbuild": "^0.23.1",
     "tsx": "^4.18.0",
-    "typescript": "^5.5.4"
+    "typescript": "^3.2.1"
   }
 }
