@@ -7,7 +7,7 @@ const ContactList = ({ formSubmitted }) => {
     useEffect(() => {
         const fetchContacts = async () => {
             try {
-                const res = await axios.get('http://54.172.140.174/api/contacts');
+                const res = await axios.get('http://54.172.140.174:80/api/contacts');
                 setContacts(res.data);
             } catch (err) {
                 console.error(err);
