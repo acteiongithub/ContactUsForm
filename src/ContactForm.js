@@ -62,7 +62,7 @@ const ContactForm = () => {
         e.preventDefault();
         if (validate()) {
             try {
-                const res = await axios.post('http://54.172.140.174/api/contacts', formData);
+                const res = await axios.post('http://54.172.140.174:80/api/contacts', formData);
                 alert(res.data);
                 setFormData({
                     firstname: '',
