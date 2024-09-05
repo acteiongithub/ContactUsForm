@@ -2,10 +2,17 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
-const port = 5000;
+const port = 3000;
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -62,5 +69,5 @@ app.get('/api/contacts', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+    console.log(`Server running on http://54.172.140.174:${port}`);
 });
