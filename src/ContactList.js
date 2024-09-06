@@ -10,7 +10,20 @@ const ContactList = ({ formSubmitted }) => {
                 const res = await axios.get('http://54.172.140.174:3000/api/contacts');
                 setContacts(res.data);
             } catch (err) {
-                console.error(err);
+                if (err.response) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    console.error('Error response data:', err.response.data);
+                    console.error('Error response status:', err.response.status);
+                    console.error('Error response headers:', err.response.headers);
+                } else if (err.request) {
+                    // The request was made but no response was received
+                    console.error('Error request data:', err.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.error('Error message:', err.message);
+                }
+                console.error('Error config:', err.config);
             }
         };
         fetchContacts();
