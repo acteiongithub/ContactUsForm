@@ -55,6 +55,7 @@ const ContactList = ({ formSubmitted }) => {
                         </tr>
                     ))}
                 </tbody>
+            </table>
         </div>
     );
 };
