@@ -9,6 +9,7 @@ const ContactList = ({ formSubmitted }) => {
             try {
                 const res = await axios.get('http://54.172.140.174/:3000/api/contacts');
                 setContacts(res.data);
+                console.log('Fetched data from Node JS MySQL: ', res.data);
             } catch (err) {
                 if (err.response) {
                     // The request was made and the server responded with a status code

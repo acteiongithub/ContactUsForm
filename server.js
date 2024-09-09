@@ -65,6 +65,7 @@ app.get('/api/contacts', (req, res) => {
             res.status(500).send('Error fetching data');
             return;
         }
+        console.log('Fetched data from MySQL: ', results);
         res.json(results);
     });
 });
