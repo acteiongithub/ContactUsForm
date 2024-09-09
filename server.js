@@ -3,6 +3,7 @@ const mysql = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
+const http = require('http');
 require('dotenv').config();
 
 const app = express();
@@ -68,6 +69,8 @@ app.get('/api/contacts', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`Server running on http://54.172.140.174:${port}`);
+const server = http.createServer(app);
+
+server.listen(port, () => {
+    console.log(`Server running on ${port}`);
 });
