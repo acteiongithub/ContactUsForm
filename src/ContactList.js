@@ -41,11 +41,10 @@ const ContactList = ({ formSubmitted }) => {
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Message</th>
-                        {/* Add other table headers as needed */}
                     </tr>
                 </thead>
                 <tbody>
-                    {contacts.map(item => (
+                    {Array.isArray(contacts) && contacts.map(item => (
                         <tr key={item.customerid}>
                             <td>{item.customerid}</td>
                             <td>{item.firstname}</td>
@@ -53,11 +52,9 @@ const ContactList = ({ formSubmitted }) => {
                             <td>{item.email}</td>
                             <td>{item.phone}</td>
                             <td>{item.message}</td>
-                            {/* Render other table data as needed */}
                         </tr>
                     ))}
                 </tbody>
-            </table>
         </div>
     );
 };
